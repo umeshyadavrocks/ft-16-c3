@@ -15,8 +15,15 @@ const Mainroutes = () => {
     <>
       <Navbar />
       <Routes>
-       {/* keep all the routes here  */}
-       {/* /books/* route need to be protected */}
+        {/* keep all the routes here  */}
+        {/* /books/* route need to be protected */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/books" element={<Books />} />
+        <Route path='/books/:id' element={<SingleBook/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/books/:id/edit" element={<EditBookData />} />
+
       </Routes>
     </>
   );

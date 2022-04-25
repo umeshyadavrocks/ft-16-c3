@@ -4,8 +4,8 @@ import styled  from "styled-components";
 export const Flex = styled.div`
 //  add required style
 `;
-export const BookCard = (props) => {
-  const { id, title, isbn, pageCount, thumbnailUrl } = props;
+export const BookCard = ({elem}) => {
+  const { id, title, isbn, pageCount, thumbnailUrl } = elem;
   return (
     <>
     <Link to = {`/books/${id}`}>

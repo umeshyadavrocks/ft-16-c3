@@ -1,6 +1,8 @@
+// import axios from "axios";
 import React from "react";
+import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 // style for Flex
@@ -9,10 +11,13 @@ const Flex = styled.div``;
 // add style for button
 export const Button = styled.button``;
 export const SingleBook = () => {
-  const data = {};
+  const { id } = useParams();
+  const [data, setData] = useState("")
+  // console.log(params);
   useEffect(() => {
-    // make a GET request to http://localhost:8080/books/${id}`
-    // use useParams to get the id
+    fetch(`http://localhost:8080/books/${id}`)
+    .then((res) => res.json())
+    .then((res) => setData(res))
   }, []);
 
   return (
